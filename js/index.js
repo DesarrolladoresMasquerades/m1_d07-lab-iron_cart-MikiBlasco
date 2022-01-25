@@ -40,6 +40,8 @@ function createProduct() {
   newProduct.querySelector(".name span").innerText = newName
   newProduct.querySelector(".price span").innerText = newPrice
 
+  newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
   document.querySelector("tbody").appendChild(newProduct)
 }
 
