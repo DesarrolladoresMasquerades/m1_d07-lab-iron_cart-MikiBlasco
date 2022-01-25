@@ -34,7 +34,13 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const newProduct = document.querySelector(".product").cloneNode(true)
+  const newPrice = document.querySelector(".create-product td input[type=number]").value
+  const newName = document.querySelector(".create-product td input[type=text]").value
+  newProduct.querySelector(".name span").innerText = newName
+  newProduct.querySelector(".price span").innerText = newPrice
+
+  document.querySelector("tbody").appendChild(newProduct)
 }
 
 window.addEventListener('load', () => {
@@ -44,5 +50,6 @@ window.addEventListener('load', () => {
   const removeBtn = document.querySelectorAll('.btn-remove');
   removeBtn.forEach(element => element.addEventListener('click', removeProduct))
 
-  //... your code goes here
+  const newProductCreate = document.getElementById('create');
+  newProductCreate.addEventListener('click', createProduct);
 });
